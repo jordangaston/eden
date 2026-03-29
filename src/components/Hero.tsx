@@ -14,7 +14,7 @@ export default function Hero({ onRequestAccess }: HeroProps) {
             <span className="text-eden-green-text">For $5/month.</span>
           </h1>
           <p className="text-lg md:text-xl xl:text-[22px] text-eden-muted max-w-[480px] leading-relaxed pt-2 mx-auto lg:mx-0">
-            Affordable Mac workspaces running on Apple silicon.  Connect using your terminal or your monitor.
+            Affordable Mac workspaces running on Apple silicon.  Perfect for running autonomous agents.
           </p>
           <div className="flex items-center gap-4 pt-3 justify-center lg:justify-start">
             <button
