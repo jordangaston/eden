@@ -57,6 +57,15 @@ export default function RequestAccessModal({ open, defaultTier, onClose }: Reque
       use_cases: data.useCases,
     })
 
+    const selectedTier = PRICING_TIERS.find((t) => t.tier === data.tier)
+    if (selectedTier && typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-18049610771/74jrCNi6-ZEcEJPo3J5D',
+        value: selectedTier.price,
+        currency: 'USD',
+      })
+    }
+
     fetch('/api/loops', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
