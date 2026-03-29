@@ -7,7 +7,7 @@ interface PricingProps {
 
 export default function Pricing({ onGetStarted }: PricingProps) {
   return (
-    <section id="pricing" className="flex flex-col items-center w-full px-6 xl:px-12 pt-24 xl:pt-[120px] gap-12">
+    <section id="pricing" className="flex flex-col items-center w-full px-6 xl:px-12 pt-12 xl:pt-16 gap-12">
       <div className="flex flex-col items-center gap-3">
         <h2 className="text-4xl md:text-5xl xl:text-[56px] font-semibold tracking-[-0.03em] leading-tight text-eden-text text-center">
           Simple pricing.

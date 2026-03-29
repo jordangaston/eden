@@ -4,7 +4,7 @@ interface HeroProps {
 
 export default function Hero({ onRequestAccess }: HeroProps) {
   return (
-    <section className="w-full px-6 xl:px-12 pt-16 md:pt-24 xl:pt-[120px] pb-52 xl:pb-80">
+    <section className="w-full px-6 xl:px-12 pt-16 md:pt-24 xl:pt-[120px] pb-24 xl:pb-32">
       <div className="max-w-[1320px] mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-12">
         {/* Left — copy */}
         <div className="flex flex-col gap-5 lg:flex-[1.2] text-center lg:text-left">

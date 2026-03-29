@@ -12,7 +12,7 @@ export const APP_LOGOS = [
   { name: 'Claude Code', src: '/claude-logo.webp', height: 64 },
   { name: 'Codex', src: '/codex-logo.webp', height: 80 },
   { name: 'OpenCode', src: '/open-code-logo.svg', height: 40 },
-  { name: 'Hermes', src: '/hermes-logo.webp', height: 108 },
+  { name: 'Hermes', src: '/hermes-logo.webp', height: 130 },
   { name: 'NanoClaw', src: '/nanoclaw-logotype.svg', height: 80 },
   { name: 'Gemini', src: '/gemini-logo.webp', height: 99 },
   { name: 'LangChain', src: '/langchain-logo.svg', height: 48 },
