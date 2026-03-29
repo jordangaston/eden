@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState, type FormEvent } from 'react'
+import posthog from 'posthog-js'
 import { PRICING_TIERS, USE_CASES, type TierName } from '../data'
 
 interface RequestAccessModalProps {
@@ -40,17 +41,32 @@ export default function RequestAccessModal({ open, defaultTier, onClose }: Reque
     }
   }
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
     const data = {
-      firstName: formData.get('firstName'),
-      lastName: formData.get('lastName'),
-      email: formData.get('email'),
-      tier: formData.get('tier'),
-      useCases: formData.getAll('useCases'),
+      firstName: formData.get('firstName') as string,
+      lastName: formData.get('lastName') as string,
+      email: formData.get('email') as string,
+      tier: formData.get('tier') as string,
+      useCases: formData.getAll('useCases') as string[],
     }
-    console.log('Request Access submission:', data)
+
+    posthog.capture('request_access_submitted', {
+      tier: data.tier,
+      use_cases: data.useCases,
+    })
+
+    fetch('/api/loops', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: data.email,
+        firstName: data.firstName,
+        lastName: data.lastName,
+      }),
+    }).catch(() => {})
+
     setSubmitted(true)
     setTimeout(() => onClose(), 2000)
   }
