@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-eden-bg: #111111;
+  --color-eden-text: #F0F0F0;
+  --color-eden-green: #6FCF8E;
+  --color-eden-green-text: #78D494;
+  --color-eden-blue: #2997FF;
+  --color-eden-muted: rgba(255, 255, 255, 0.55);
+  --color-eden-muted-40: rgba(255, 255, 255, 0.40);
+  --color-eden-muted-30: rgba(255, 255, 255, 0.30);
+  --color-eden-muted-25: rgba(255, 255, 255, 0.25);
+  --color-eden-card: rgba(255, 255, 255, 0.04);
+  --color-eden-card-highlight: rgba(255, 255, 255, 0.08);
+  --color-eden-border: rgba(255, 255, 255, 0.08);
+  --color-eden-border-highlight: rgba(255, 255, 255, 0.12);
+  --color-eden-divider: rgba(255, 255, 255, 0.06);
+  --color-eden-btn: #3A8F5C;
+  --color-eden-btn-hover: #429964;
+
+  --font-inter: "Inter", system-ui, sans-serif;
+  --font-brand: "Cormorant Garamond", "Georgia", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-eden-bg);
+  color: var(--color-eden-text);
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes carousel-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-carousel {
+  animation: carousel-scroll 27.5s linear infinite;
+}
+
+.animate-carousel:hover {
+  animation-play-state: paused;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
